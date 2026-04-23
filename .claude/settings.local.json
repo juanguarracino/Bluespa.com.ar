@@ -16,7 +16,8 @@
       "Bash(git branch *)",
       "Bash(git push *)",
       "Bash(python3 -c ' *)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(pnpm add *)"
     ]
   }
 }

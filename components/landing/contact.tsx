@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { z } from "zod"
+import { Turnstile } from "@marsidev/react-turnstile"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Instagram, Facebook } from "lucide-react"
 
@@ -23,6 +24,8 @@ export function Contact() {
     mensaje: "",
     tipoProyecto: "",
   })
+  const [honeypot, setHoneypot] = useState("")
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -45,6 +48,15 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setFormErrors({})
+
+    // Honeypot check
+    if (honeypot) return
+
+    // Turnstile check
+    if (!turnstileToken) {
+      setFormErrors({ captcha: "Por favor completá la verificación." })
+      return
+    }
 
     const result = contactSchema.safeParse(formState)
     if (!result.success) {
@@ -319,6 +331,29 @@ export function Contact() {
                     className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
                     placeholder="Contanos sobre tu proyecto, dimensiones aproximadas, ubicación..."
                   />
+                </div>
+
+                {/* Honeypot — invisible para humanos */}
+                <input
+                  type="text"
+                  name="website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
+                {/* Turnstile CAPTCHA */}
+                <div>
+                  <Turnstile
+                    siteKey="0x4AAAAAADB5x3e3I2PSLv9-"
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken(null)}
+                    onError={() => setTurnstileToken(null)}
+                    options={{ language: "es" }}
+                  />
+                  {formErrors.captcha && <p className="text-red-500 text-xs mt-1">{formErrors.captcha}</p>}
                 </div>
 
                 {/* Submit Button */}
