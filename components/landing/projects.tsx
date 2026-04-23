@@ -7,7 +7,6 @@ export function Projects() {
   const [isVisible, setIsVisible] = useState(false)
   const [activeProject, setActiveProject] = useState(0)
   const [activeImage, setActiveImage] = useState(0)
-  const [imageLoaded, setImageLoaded] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
   const projects = [
@@ -109,10 +108,6 @@ export function Projects() {
     })
   }, [activeProject])
 
-  // Reset loaded state cuando cambia la imagen
-  useEffect(() => {
-    setImageLoaded(false)
-  }, [activeImage, activeProject])
 
   const handlePrevImage = () => {
     const images = projects[activeProject].images
@@ -162,17 +157,14 @@ export function Projects() {
             }`}
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
-              {/* Skeleton mientras carga */}
-              {!imageLoaded && (
-                <div className="absolute inset-0 bg-muted animate-pulse" />
-              )}
-              <img
-                key={`${activeProject}-${activeImage}`}
-                src={projects[activeProject].images[activeImage]}
-                alt={`${projects[activeProject].title} - Imagen ${activeImage + 1}`}
-                className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
-                onLoad={() => setImageLoaded(true)}
-              />
+              {projects[activeProject].images.map((src, idx) => (
+                <img
+                  key={`${activeProject}-${idx}`}
+                  src={src}
+                  alt={`${projects[activeProject].title} - Imagen ${idx + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${idx === activeImage ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
               
               {/* Image Navigation Arrows */}
