@@ -156,66 +156,75 @@ export function Projects() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
-              {projects[activeProject].images.map((src, idx) => (
-                <img
-                  key={`${activeProject}-${idx}`}
-                  src={src}
-                  alt={`${projects[activeProject].title} - Imagen ${idx + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${idx === activeImage ? "opacity-100 z-10" : "opacity-0 z-0"}`}
-                />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent z-[11]" />
-              
-              {/* Image Navigation Arrows */}
+            {/* Contenedor principal relativo para overlay externo */}
+            <div className="relative rounded-3xl shadow-2xl aspect-[4/3]">
+
+              {/* Contenedor de imágenes con overflow-hidden separado */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                {projects[activeProject].images.map((src, idx) => (
+                  <img
+                    key={`${activeProject}-${idx}`}
+                    src={src}
+                    alt={`${projects[activeProject].title} - Imagen ${idx + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${idx === activeImage ? "opacity-100" : "opacity-0"}`}
+                    style={{ zIndex: idx === activeImage ? 1 : 0 }}
+                  />
+                ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" style={{ zIndex: 2 }} />
+              </div>
+
+              {/* Overlay texto — fuera del overflow-hidden */}
+              <div
+                className={`absolute bottom-0 left-0 right-0 p-4 sm:p-8 transition-all duration-500`}
+                style={{ zIndex: 10, opacity: activeImage === 0 ? 1 : 0, pointerEvents: activeImage === 0 ? "auto" : "none" }}
+              >
+                <div className="flex items-center gap-2 text-white/80 mb-1 sm:mb-2">
+                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">{projects[activeProject].location}</span>
+                </div>
+                <h3 className="font-serif text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 line-clamp-2">
+                  {projects[activeProject].title}
+                </h3>
+                <p className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed max-w-md hidden sm:block">
+                  {projects[activeProject].description}
+                </p>
+                <div className="flex gap-6 mt-4 pt-4 border-t border-white/20">
+                  <div>
+                    <span className="text-white/60 text-xs uppercase tracking-wider">Dimensiones</span>
+                    <p className="text-white font-semibold">{projects[activeProject].dimensions}</p>
+                  </div>
+                  <div>
+                    <span className="text-white/60 text-xs uppercase tracking-wider">Estilo</span>
+                    <p className="text-white font-semibold">{projects[activeProject].style}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Flechas de navegación */}
               <button
                 onClick={handlePrevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/20 hover:bg-card/40 text-card transition-all duration-300 hover:scale-110 z-10"
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all duration-300 hover:scale-110"
+                style={{ zIndex: 10 }}
                 aria-label="Imagen anterior"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={handleNextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/20 hover:bg-card/40 text-card transition-all duration-300 hover:scale-110 z-10"
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all duration-300 hover:scale-110"
+                style={{ zIndex: 10 }}
                 aria-label="Siguiente imagen"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
 
-              {/* Image Indicators */}
-              <div className="absolute top-4 right-4 bg-foreground/50 text-card text-xs font-medium px-3 py-1.5 rounded-full z-[20]">
+              {/* Contador */}
+              <div className="absolute top-4 right-4 bg-black/50 text-white text-xs font-medium px-3 py-1.5 rounded-full" style={{ zIndex: 10 }}>
                 {activeImage + 1} / {projects[activeProject].images.length}
               </div>
 
-              {/* Project Info Overlay */}
-              <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-8 z-[30] transition-all duration-500 ${activeImage === 0 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-                <div className="flex items-center gap-2 text-card/80 mb-1 sm:mb-2">
-                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm font-medium">{projects[activeProject].location}</span>
-                </div>
-                <h3 className="font-serif text-lg sm:text-2xl lg:text-3xl font-bold text-card mb-1 sm:mb-2 line-clamp-2">
-                  {projects[activeProject].title}
-                </h3>
-                <p className="text-card/80 text-xs sm:text-sm lg:text-base leading-relaxed max-w-md hidden sm:block">
-                  {projects[activeProject].description}
-                </p>
-                
-                {/* Stats */}
-                <div className="flex gap-6 mt-4 pt-4 border-t border-card/20">
-                  <div>
-                    <span className="text-card/60 text-xs uppercase tracking-wider">Dimensiones</span>
-                    <p className="text-card font-semibold">{projects[activeProject].dimensions}</p>
-                  </div>
-                  <div>
-                    <span className="text-card/60 text-xs uppercase tracking-wider">Estilo</span>
-                    <p className="text-card font-semibold">{projects[activeProject].style}</p>
-                  </div>
-                </div>
-              </div>
-
               {/* Image Dots */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" style={{ zIndex: 10 }}>
                 {projects[activeProject].images.map((_, idx) => (
                   <button
                     key={idx}
