@@ -111,8 +111,8 @@ export function Services() {
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary/30 group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-8 h-8 text-secondary" />
+              <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-8 h-8 text-white" />
               </div>
 
               {/* Content */}
