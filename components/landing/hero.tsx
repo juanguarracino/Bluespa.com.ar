@@ -47,6 +47,14 @@ export function Hero() {
             <span className="block text-secondary mt-2">Premium</span>
           </h1>
 
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-card/10 backdrop-blur-sm border border-card/20 rounded-full px-4 py-2 mb-8 max-w-[90vw]">
+            <span className="w-2 h-2 shrink-0 bg-secondary rounded-full animate-pulse" />
+            <span className="text-card/90 text-xs sm:text-sm font-medium tracking-wide text-center">
+              Más de 25 años de experiencia en Berazategui
+            </span>
+          </div>
+
           {/* Subheadline */}
           <p className="text-card/85 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed text-pretty">
             Diseñamos y construimos la piscina de tus sueños con los más altos estándares de calidad. 
