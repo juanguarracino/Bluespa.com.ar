@@ -85,7 +85,7 @@ export function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto mb-20">
             {[
               { number: "25+", label: "Años de experiencia" },
               { number: "500+", label: "Piscinas construidas" },
@@ -98,7 +98,7 @@ export function Hero() {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
                 }`}
               >
-                <div className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-1">
+                <div className="font-serif text-3xl md:text-4xl font-bold text-white mb-1">
                   {stat.number}
                 </div>
                 <div className="text-card/70 text-sm font-medium">{stat.label}</div>
