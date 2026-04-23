@@ -7,6 +7,7 @@ export function Projects() {
   const [isVisible, setIsVisible] = useState(false)
   const [activeProject, setActiveProject] = useState(0)
   const [activeImage, setActiveImage] = useState(0)
+  const [imageLoaded, setImageLoaded] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
   const projects = [
@@ -99,6 +100,20 @@ export function Projects() {
     setActiveImage(0)
   }, [activeProject])
 
+  // Precargar todas las imágenes del proyecto activo
+  useEffect(() => {
+    const images = projects[activeProject].images
+    images.forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [activeProject])
+
+  // Reset loaded state cuando cambia la imagen
+  useEffect(() => {
+    setImageLoaded(false)
+  }, [activeImage, activeProject])
+
   const handlePrevImage = () => {
     const images = projects[activeProject].images
     setActiveImage((prev) => (prev === 0 ? images.length - 1 : prev - 1))
@@ -147,11 +162,16 @@ export function Projects() {
             }`}
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+              {/* Skeleton mientras carga */}
+              {!imageLoaded && (
+                <div className="absolute inset-0 bg-muted animate-pulse" />
+              )}
               <img
                 key={`${activeProject}-${activeImage}`}
                 src={projects[activeProject].images[activeImage]}
                 alt={`${projects[activeProject].title} - Imagen ${activeImage + 1}`}
-                className="w-full h-full object-cover transition-all duration-500"
+                className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+                onLoad={() => setImageLoaded(true)}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
               
