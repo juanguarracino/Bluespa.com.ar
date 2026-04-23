@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "bluespa.com.ar" }],
+      "destination": "https://www.bluespa.com.ar/$1",
+      "permanent": true
+    }
+  ]
+}

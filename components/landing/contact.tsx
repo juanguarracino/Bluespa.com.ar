@@ -103,8 +103,8 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "info@bluespanatatorios.com",
-      href: "mailto:info@bluespanatatorios.com",
+      value: "consultas@bluespa.com.ar",
+      href: "mailto:consultas@bluespa.com.ar",
     },
     {
       icon: MapPin,

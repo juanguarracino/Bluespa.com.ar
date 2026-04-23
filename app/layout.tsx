@@ -107,7 +107,7 @@ const jsonLd = {
   description: 'Empresa especializada en construcción de piscinas de hormigón en Berazategui y GBA Sur. Más de 25 años de experiencia.',
   url: 'https://bluespa.com.ar',
   telephone: '+5491163782095',
-  email: 'info@bluespanatatorios.com',
+  email: 'consultas@bluespa.com.ar',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Berazategui',

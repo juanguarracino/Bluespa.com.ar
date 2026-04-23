@@ -21,6 +21,10 @@ const nextConfig = {
           { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
           // Protección XSS básica para browsers viejos
           { key: "X-XSS-Protection", value: "1; mode=block" },
+          // Protección contra XS-Leaks y ataques cross-origin
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+          { key: "Cross-Origin-Embedder-Policy", value: "require-corp" },
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
           // Content Security Policy
           ...(process.env.NODE_ENV === "production"
             ? [

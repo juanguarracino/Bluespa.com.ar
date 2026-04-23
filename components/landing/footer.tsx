@@ -99,11 +99,11 @@ export function Footer() {
                 <span>11 6378-2095</span>
               </a>
               <a
-                href="mailto:info@bluespanatatorios.com"
+                href="mailto:consultas@bluespa.com.ar"
                 className="flex items-center gap-3 text-background/70 hover:text-secondary transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>info@bluespanatatorios.com</span>
+                <span>consultas@bluespa.com.ar</span>
               </a>
               <div className="flex items-start gap-3 text-background/70">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
