@@ -165,7 +165,7 @@ export function Projects() {
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${idx === activeImage ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                 />
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent z-10" />
               
               {/* Image Navigation Arrows */}
               <button
@@ -189,7 +189,7 @@ export function Projects() {
               </div>
 
               {/* Project Info Overlay */}
-              <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-8 transition-all duration-500 ${activeImage === 0 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+              <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-8 z-20 transition-all duration-500 ${activeImage === 0 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                 <div className="flex items-center gap-2 text-card/80 mb-1 sm:mb-2">
                   <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                   <span className="text-xs sm:text-sm font-medium">{projects[activeProject].location}</span>
