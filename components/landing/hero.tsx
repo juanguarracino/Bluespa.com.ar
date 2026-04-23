@@ -40,13 +40,6 @@ export function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-card/10 backdrop-blur-sm border border-card/20 rounded-full px-4 py-2 mb-8 max-w-[90vw]">
-            <span className="w-2 h-2 shrink-0 bg-secondary rounded-full animate-pulse" />
-            <span className="text-card/90 text-xs sm:text-sm font-medium tracking-wide text-center">
-              Más de 25 años de experiencia en Berazategui
-            </span>
-          </div>
 
           {/* Main Headline */}
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-card font-bold leading-[1.1] mb-6 text-balance">
