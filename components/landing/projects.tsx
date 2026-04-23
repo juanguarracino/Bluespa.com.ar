@@ -10,20 +10,6 @@ export function Projects() {
   const sectionRef = useRef<HTMLElement>(null)
   const touchStartX = useRef<number | null>(null)
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-  }
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return
-    const diff = touchStartX.current - e.changedTouches[0].clientX
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) handleNextImage()
-      else handlePrevImage()
-    }
-    touchStartX.current = null
-  }
-
   const projects = [
     {
       title: "Club de campo Abril Barrio Los Cisnes Lote 1",
@@ -132,6 +118,20 @@ export function Projects() {
   const handleNextImage = () => {
     const images = projects[activeProject].images
     setActiveImage((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+  }
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) handleNextImage()
+      else handlePrevImage()
+    }
+    touchStartX.current = null
   }
 
   return (
