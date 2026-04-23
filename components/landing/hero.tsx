@@ -108,7 +108,7 @@ export function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute left-1/2 -translate-x-1/2 animate-bounce" style={{ bottom: '17px' }}>
           <Link
             href="#nosotros"
             className="flex flex-col items-center gap-2 text-card/60 hover:text-card transition-colors"
