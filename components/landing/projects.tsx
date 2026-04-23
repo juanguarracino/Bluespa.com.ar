@@ -176,7 +176,7 @@ export function Projects() {
               {/* Overlay texto — fuera del overflow-hidden */}
               <div
                 className={`absolute bottom-0 left-0 right-0 p-4 sm:p-8 transition-all duration-500`}
-                style={{ zIndex: 10, opacity: activeImage === 0 ? 1 : 0, pointerEvents: activeImage === 0 ? "auto" : "none" }}
+                style={{ zIndex: 10, opacity: activeImage === 0 ? 1 : 0, pointerEvents: "none" }}
               >
                 <div className="flex items-center gap-2 text-white/80 mb-1 sm:mb-2">
                   <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -204,7 +204,7 @@ export function Projects() {
               <button
                 onClick={handlePrevImage}
                 className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all duration-300 hover:scale-110"
-                style={{ zIndex: 10 }}
+                style={{ zIndex: 20 }}
                 aria-label="Imagen anterior"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -212,7 +212,7 @@ export function Projects() {
               <button
                 onClick={handleNextImage}
                 className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all duration-300 hover:scale-110"
-                style={{ zIndex: 10 }}
+                style={{ zIndex: 20 }}
                 aria-label="Siguiente imagen"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -224,7 +224,7 @@ export function Projects() {
               </div>
 
               {/* Image Dots */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" style={{ zIndex: 10 }}>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" style={{ zIndex: 20 }}>
                 {projects[activeProject].images.map((_, idx) => (
                   <button
                     key={idx}
