@@ -8,6 +8,21 @@ export function Projects() {
   const [activeProject, setActiveProject] = useState(0)
   const [activeImage, setActiveImage] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
+  const touchStartX = useRef<number | null>(null)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) handleNextImage()
+      else handlePrevImage()
+    }
+    touchStartX.current = null
+  }
 
   const projects = [
     {
@@ -160,7 +175,11 @@ export function Projects() {
             <div className="relative rounded-3xl shadow-2xl aspect-[4/3]">
 
               {/* Contenedor de imágenes con overflow-hidden separado */}
-              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+              <div
+                className="absolute inset-0 rounded-3xl overflow-hidden"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              >
                 {projects[activeProject].images.map((src, idx) => (
                   <img
                     key={`${activeProject}-${idx}`}
