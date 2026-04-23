@@ -34,7 +34,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 lg:px-8 text-center pt-24 sm:pt-0">
+      <div className="relative container mx-auto px-4 lg:px-8 text-center pt-28 sm:pt-32 lg:pt-36">
         <div
           className={`transition-all duration-1000 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
