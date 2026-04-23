@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     'piletas con hidromasaje',
     'venecitas piscinas',
   ],
+  verification: {
+    google: '6NRXgZsipJq_GDW3FLq2ZgKO5xCbXmuD3R2Au-HUs6c',
+  },
   authors: [{ name: 'BlueSpa Natatorios' }],
   creator: 'BlueSpa Natatorios',
   publisher: 'BlueSpa Natatorios',
