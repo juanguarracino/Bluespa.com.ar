@@ -1,0 +1,25 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "DENY"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'none'; upgrade-insecure-requests"
+
+  SetEnvIfExpr "%{HTTPS} == 'on'" is_https
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=is_https
+</IfModule>
+
+<FilesMatch "^(package\.json|pnpm-lock\.yaml|tsconfig\.json|next\.config\.mjs|postcss\.config\.mjs|components\.json|next-env\.d\.ts)$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(tsx?|jsx?|mjs|map|md|log|sql|bak|env)$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

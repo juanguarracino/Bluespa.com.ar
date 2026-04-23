@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python)",
+      "Bash(npm audit:*)",
+      "Bash(grep -r \"rel=\" /c/xampp/htdocs/BluespaNatatorios/components/landing/*.tsx)",
+      "Bash(grep -r \"target=\\\\\"_blank\\\\\"\" /c/xampp/htdocs/BluespaNatatorios/components/landing/*.tsx)",
+      "Bash(xargs grep:*)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
