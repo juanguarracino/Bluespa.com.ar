@@ -135,11 +135,11 @@ export function Contact() {
           }`}
         >
           <div className="inline-flex items-center gap-2 mb-6">
-            <span className="w-12 h-px bg-secondary" />
-            <span className="text-secondary font-semibold text-sm tracking-widest uppercase">
+            <span className="w-12 h-px bg-white" />
+            <span className="text-white font-semibold text-sm tracking-widest uppercase">
               Contacto
             </span>
-            <span className="w-12 h-px bg-secondary" />
+            <span className="w-12 h-px bg-white" />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 text-balance">
             Empezá a construir tu sueño hoy
@@ -170,8 +170,8 @@ export function Contact() {
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="flex items-center gap-5 group"
                 >
-                  <div className="w-14 h-14 bg-primary-foreground/10 rounded-2xl flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                    <item.icon className="w-6 h-6 text-secondary" />
+                  <div className="w-14 h-14 bg-primary-foreground/10 rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                    <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-primary-foreground/60 text-sm mb-0.5">{item.label}</p>
@@ -186,7 +186,7 @@ export function Contact() {
             {/* Schedule */}
             <div className="bg-primary-foreground/5 rounded-2xl p-6 border border-primary-foreground/10">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-5 h-5 text-secondary" />
+                <Clock className="w-5 h-5 text-white" />
                 <h4 className="font-semibold text-primary-foreground">Horario de atención</h4>
               </div>
               <div className="space-y-2 text-primary-foreground/80">
@@ -200,7 +200,7 @@ export function Contact() {
                 </p>
                 <p className="flex justify-between">
                   <span>Domingos</span>
-                  <span className="font-medium text-secondary">Cerrado</span>
+                  <span className="font-medium text-white">Cerrado</span>
                 </p>
               </div>
             </div>
