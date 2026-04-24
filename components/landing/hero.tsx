@@ -109,7 +109,7 @@ export function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 animate-bounce">
           <button
             onClick={() => document.getElementById("nosotros")?.scrollIntoView({ behavior: "smooth" })}
             className="flex flex-col items-center gap-2 text-card/60 hover:text-card transition-colors"
