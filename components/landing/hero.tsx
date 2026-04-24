@@ -109,14 +109,14 @@ export function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute left-1/2 -translate-x-1/2 animate-bounce" style={{ bottom: '-13px' }}>
-          <Link
-            href="#nosotros"
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
+          <button
+            onClick={() => document.getElementById("nosotros")?.scrollIntoView({ behavior: "smooth" })}
             className="flex flex-col items-center gap-2 text-card/60 hover:text-card transition-colors"
           >
             <span className="text-xs tracking-widest uppercase">Descubrir más</span>
             <ArrowDown className="w-5 h-5" />
-          </Link>
+          </button>
         </div>
       </div>
     </section>
