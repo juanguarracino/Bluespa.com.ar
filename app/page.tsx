@@ -8,10 +8,12 @@ import { Testimonials } from "@/components/landing/testimonials"
 import { Contact } from "@/components/landing/contact"
 import { Footer } from "@/components/landing/footer"
 import { WhatsAppButton } from "@/components/landing/whatsapp-button"
+import { SectionUrlUpdater } from "@/components/landing/section-url-updater"
 
 export default function Home() {
   return (
     <main className="relative">
+      <SectionUrlUpdater />
       <Header />
       <Hero />
       <About />
