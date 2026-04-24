@@ -150,7 +150,7 @@ export function Projects() {
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="w-12 h-px bg-secondary" />
             <span className="text-secondary font-semibold text-sm tracking-widest uppercase">
-              Portfolio
+              Portafolio
             </span>
             <span className="w-12 h-px bg-secondary" />
           </div>

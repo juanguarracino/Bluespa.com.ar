@@ -85,11 +85,11 @@ export function Services() {
           }`}
         >
           <div className="inline-flex items-center gap-2 mb-6">
-            <span className="w-12 h-px bg-secondary" />
-            <span className="text-secondary font-semibold text-sm tracking-widest uppercase">
+            <span className="w-12 h-px bg-white" />
+            <span className="text-white font-semibold text-sm tracking-widest uppercase">
               Nuestros Servicios
             </span>
-            <span className="w-12 h-px bg-secondary" />
+            <span className="w-12 h-px bg-white" />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 text-balance">
             Obra integral de principio a fin
