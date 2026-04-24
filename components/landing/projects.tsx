@@ -61,8 +61,8 @@ export function Projects() {
       description: "Pileta de gran porte con hidromasaje integrado y banquetas acuáticas perimetrales. Un espacio diseñado para el relax total, donde la familia puede disfrutar del agua en todos sus rincones.",
     },
     {
-      title: "Club de campo Miralagos Lote 222",
-      location: "Ruta 2 Km 65",
+      title: "Camping Sutiaga Villa Elisa",
+      location: "La Plata",
       dimensions: "10m x 5m",
       style: "Clásico Premium",
       images: [

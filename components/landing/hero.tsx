@@ -13,7 +13,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div
@@ -34,7 +34,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 lg:px-8 text-center pt-28 sm:pt-32 lg:pt-36">
+      <div className="relative container mx-auto px-4 lg:px-8 text-center">
         <div
           className={`transition-all duration-1000 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -42,7 +42,7 @@ export function Hero() {
         >
 
           {/* Main Headline */}
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-card font-bold leading-[1.1] mb-6 text-balance">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-card font-bold leading-[1.1] mb-6 text-balance">
             Piscinas de Hormigón
             <span className="block text-secondary mt-2">Premium</span>
           </h1>
