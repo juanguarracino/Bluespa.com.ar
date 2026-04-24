@@ -74,7 +74,7 @@ export function Projects() {
         "/images/proyecto4/6.jpeg",
         "/images/proyecto4/7.jpeg",
       ],
-      description: "Una pileta de hormigón a pura elegancia, rodeada de un entorno natural privilegiado. Terminaciones de primer nivel con revestimiento venecita y solado perimetral que invitan al descanso y al disfrute en cada rincón.",
+      description: "Continuación y renovación de una pileta de gran porte para uso recreativo en camping. Se realizó la pintura completa en azul y se incorporó el logo del lugar pintado en el fondo, dándole identidad propia al espacio acuático.",
     },
   ]
 
