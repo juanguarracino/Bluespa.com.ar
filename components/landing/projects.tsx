@@ -17,7 +17,7 @@ export function Projects() {
       dimensions: "8m x 4m",
       style: "Minimalista",
       images: [
-        "/images/proyecto1/0.png",
+        "/images/proyecto1/0.jpeg",
         "/images/proyecto1/1.jpeg",
         "/images/proyecto1/2.jpeg",
         "/images/proyecto1/3.jpeg",
