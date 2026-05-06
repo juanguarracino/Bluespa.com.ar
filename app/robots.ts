@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://bluespa.com.ar/sitemap.xml',
+    sitemap: 'https://www.bluespa.com.ar/sitemap.xml',
   }
 }

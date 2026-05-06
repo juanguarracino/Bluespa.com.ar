@@ -5,7 +5,7 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://bluespa.com.ar',
+      url: 'https://www.bluespa.com.ar',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,

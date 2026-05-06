@@ -39,14 +39,14 @@ export const metadata: Metadata = {
   creator: 'BlueSpa Natatorios',
   publisher: 'BlueSpa Natatorios',
   category: 'Construcción de piscinas',
-  metadataBase: new URL('https://bluespa.com.ar'),
+  metadataBase: new URL('https://www.bluespa.com.ar'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'es_AR',
-    url: 'https://bluespa.com.ar',
+    url: 'https://www.bluespa.com.ar',
     siteName: 'BlueSpa Natatorios',
     title: 'BlueSpa Natatorios | Piscinas de Hormigón en Berazategui y GBA',
     description: 'Más de 25 años construyendo piscinas de hormigón en el GBA. Obra integral, hidromasaje, venecitas y terminaciones premium. Pedí tu presupuesto sin cargo.',
@@ -105,7 +105,7 @@ const jsonLd = {
   '@type': 'LocalBusiness',
   name: 'BlueSpa Natatorios',
   description: 'Empresa especializada en construcción de piscinas de hormigón en Berazategui y GBA Sur. Más de 25 años de experiencia.',
-  url: 'https://bluespa.com.ar',
+  url: 'https://www.bluespa.com.ar',
   telephone: '+5491163782095',
   email: 'consultas@bluespa.com.ar',
   address: {
@@ -129,7 +129,7 @@ const jsonLd = {
     opens: '08:00',
     closes: '18:00',
   },
-  image: 'https://bluespa.com.ar/images/proyecto1/1.jpeg',
+  image: 'https://www.bluespa.com.ar/images/proyecto1/1.jpeg',
   priceRange: '$$',
   areaServed: [
     'Berazategui', 'Hudson', 'Quilmes', 'Florencio Varela', 'La Plata', 'GBA Sur'
